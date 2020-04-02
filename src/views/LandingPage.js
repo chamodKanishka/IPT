@@ -8,6 +8,7 @@ import { makeStyles } from "@material-ui/core/styles";
 
 // core components
 import Header from "../components/Header/Header.js";
+import Footer from "../components/Footer/Footer.js";
 import HeaderLinks from "../components/Header/HeaderLinks.js";
 import GridContainer from "../components/Grid/GridContainer.js";
 import GridItem from "../components/Grid/GridItem.js";
@@ -62,6 +63,7 @@ export default function LandingPage(props) {
           </GridContainer>
         </div>
       </Parallax>
+      <Footer />
     </div>
   );
 }
