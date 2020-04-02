@@ -8,6 +8,7 @@ import { makeStyles } from "@material-ui/core/styles";
 
 // core components
 import Header from "../components/Header/Header.js";
+import HeaderLinks from "../components/Header/HeaderLinks.js";
 import GridContainer from "../components/Grid/GridContainer.js";
 import GridItem from "../components/Grid/GridItem.js";
 import Button from "../components/CustomButtons/Button.js";
@@ -28,6 +29,7 @@ export default function LandingPage(props) {
         color="transparent"
         brand="Industrial Preparation Programme"
         fixed
+        rightLinks={<HeaderLinks />}
         changeColorOnScroll={{
           height: 400,
           color: "white"
@@ -47,7 +49,7 @@ export default function LandingPage(props) {
               </h4>
               <br />
               <Button
-                color="danger"
+                color="info"
                 size="lg"
                 href="https://www.youtube.com/watch?v=dQw4w9WgXcQ&ref=creativetim"
                 target="_blank"
