@@ -7,6 +7,7 @@ import { makeStyles } from "@material-ui/core/styles";
 // @material-ui/icons
 
 // core components
+import Header from "../components/Header/Header.js";
 import GridContainer from "../components/Grid/GridContainer.js";
 import GridItem from "../components/Grid/GridItem.js";
 import Button from "../components/CustomButtons/Button.js";
@@ -23,6 +24,16 @@ export default function LandingPage(props) {
   const { ...rest } = props;
   return (
     <div>
+      <Header
+        color="transparent"
+        brand="Industrial Preparation Programme"
+        fixed
+        changeColorOnScroll={{
+          height: 400,
+          color: "white"
+        }}
+        {...rest}
+      />
       <Parallax filter image={require("../assets/img/landing-bg.jpg")}>
         <div className={classes.container}>
           <GridContainer>
