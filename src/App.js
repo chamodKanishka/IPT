@@ -1,11 +1,10 @@
 import React from 'react';
-import logo from './logo.svg';
+import LandingPage from "./screens/LandingPage";
 import './App.css';
-import LandingPage from "./views/LandingPage"
 
 function App() {
   return (
-    <LandingPage></LandingPage>
+    <LandingPage/>
   );
 }
 
