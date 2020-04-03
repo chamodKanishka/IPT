@@ -6,6 +6,8 @@ import Typography from '@material-ui/core/Typography';
 import Button from '@material-ui/core/Button';
 import IconButton from '@material-ui/core/IconButton';
 import MenuIcon from '@material-ui/icons/Menu';
+import Box from '@material-ui/core/Box';
+
 
 function LandingPage() {
     const classes = useStyles();
@@ -23,6 +25,12 @@ function LandingPage() {
         <Button color="inherit">Login</Button>
       </Toolbar>
     </AppBar>
+    <Box className={classes.box} clone>
+    <Button variant="contained" color="primary">
+        Let's Start
+      </Button>
+    </Box>
+    
   </div>
   );
 }
@@ -32,6 +40,9 @@ export default LandingPage;
 const useStyles = makeStyles((theme) => ({
     root: {
       flexGrow: 1,
+      '& > *': {
+        margin: theme.spacing(1),
+      },
       
     },
     menuButton: {
@@ -40,4 +51,8 @@ const useStyles = makeStyles((theme) => ({
     title: {
       flexGrow: 1,
     },
+    box:{
+        marginTop:'20%',
+        marginLeft:'10%'
+    }
   }));
