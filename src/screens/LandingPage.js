@@ -17,13 +17,10 @@ function LandingPage() {
     const classes = useStyles();
 
   return (
-    <div>
+      <div className={classes.main}>
     <div className={classes.root}>
-    <AppBar position="static">
+    <AppBar className={classes.appbar} position="static">
       <Toolbar>
-        <IconButton edge="start" className={classes.menuButton} color="inherit" aria-label="menu">
-          <MenuIcon />
-        </IconButton>
         <Typography variant="h6" className={classes.title}>
           Industiral Preparation Programme
         </Typography>
@@ -40,7 +37,7 @@ function LandingPage() {
                   <h1>Industrial<br/>Preparation<br/>Programme</h1>
                 </Typography>
                 <Typography variant="body2" color="textSecondary">
-                <h4>
+                <h4 className={classes.content}>
                 Every landing page needs a small description after the big bold
                 title, that{"'"}s why we added this text here. Add here all the
                 information that can make you or your product create the first
@@ -66,13 +63,18 @@ function LandingPage() {
 export default LandingPage;
 
 const useStyles = makeStyles((theme) => ({
+    main:{
+        background: 'url(https://images.pexels.com/photos/378273/pexels-photo-378273.jpeg?w=1260&h=750&auto=compress&cs=tinysrgb) center center no-repeat',
+        backgroundSize: 'cover' ,
+        height:'fixed'
+    },
     root: {
       flexGrow: 1,
-      '& > *': {
-        margin: theme.spacing(1),
-      },
-      height:'90vh',
+      height:'96vh',
       
+    },
+    appbar:{
+        backgroundColor: 'rgba(255, 255, 255, 0.05)'
     },
     menuButton: {
       marginRight: theme.spacing(2),
@@ -88,7 +90,9 @@ const useStyles = makeStyles((theme) => ({
         padding: theme.spacing(2),
         maxWidth: 300,
         marginTop:'7.5%',
-        marginLeft:'5.5%'
+        marginLeft:'5.5%',
+        backgroundColor: 'rgba(255, 255, 255, 0.05)',
+        color:'white'
       },
       img: {
         margin: 'auto',
@@ -101,5 +105,8 @@ const useStyles = makeStyles((theme) => ({
     },
     Footer:{
         marginTop:'100px'
+    },
+    content:{
+        color:'white'
     }
   }));

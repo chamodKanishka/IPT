@@ -12,6 +12,7 @@ const useStyles = makeStyles((theme) => ({
     display: 'center',
     alignContent: 'center',
     margin:'100px',
+    color:'white'
   },
   icon: {
     marginRight: theme.spacing(0.5),
