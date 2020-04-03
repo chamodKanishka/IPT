@@ -32,16 +32,16 @@ export default function Footer() {
     <Breadcrumbs aria-label="breadcrumb">
       <Link color="inherit" href="/" onClick={handleClick} className={classes.link}>
         <HomeIcon className={classes.icon} />
-        Material-UI
+        NSBM Home
       </Link>
       <Link
         color="inherit"
-        href="/getting-started/installation/"
+        href="http://www.nsbm.ac.lk"
         onClick={handleClick}
         className={classes.link}
       >
         <WhatshotIcon className={classes.icon} />
-        Core
+        Ads Site
       </Link>
       <Link color="inherit" href="/getting-started/installation/" className={classes.link}>
         <GrainIcon onClick={handleClick} className={classes.icon} />

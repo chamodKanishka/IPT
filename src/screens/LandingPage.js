@@ -17,6 +17,7 @@ function LandingPage() {
     const classes = useStyles();
 
   return (
+    <div>
     <div className={classes.root}>
     <AppBar position="static">
       <Toolbar>
@@ -57,6 +58,8 @@ function LandingPage() {
         </Grid>
       </Paper>
   </div>
+  <Footer/>
+  </div>
   );
 }
 
@@ -68,6 +71,7 @@ const useStyles = makeStyles((theme) => ({
       '& > *': {
         margin: theme.spacing(1),
       },
+      height:'90vh',
       
     },
     menuButton: {
