@@ -10,7 +10,8 @@ import Box from '@material-ui/core/Box';
 import ButtonBase from '@material-ui/core/ButtonBase';
 import Grid from '@material-ui/core/Grid';
 import Paper from '@material-ui/core/Paper';
-
+import Footer from './subComponents/Footer'
+import { BottomNavigation } from '@material-ui/core';
 
 function LandingPage() {
     const classes = useStyles();
@@ -25,7 +26,8 @@ function LandingPage() {
         <Typography variant="h6" className={classes.title}>
           Industiral Preparation Programme
         </Typography>
-        <Button color="inherit">Login</Button>
+        <Button color="inherit">Button1</Button>
+        <Button color="inherit">Button2</Button>
       </Toolbar>
     </AppBar>
     <Paper className={classes.paper}>
@@ -54,7 +56,6 @@ function LandingPage() {
           </Grid>
         </Grid>
       </Paper>
-    
   </div>
   );
 }
@@ -94,4 +95,7 @@ const useStyles = makeStyles((theme) => ({
       desc:{
         marginTop:'15%'
     },
+    Footer:{
+        marginTop:'100px'
+    }
   }));
