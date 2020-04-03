@@ -7,6 +7,9 @@ import Button from '@material-ui/core/Button';
 import IconButton from '@material-ui/core/IconButton';
 import MenuIcon from '@material-ui/icons/Menu';
 import Box from '@material-ui/core/Box';
+import ButtonBase from '@material-ui/core/ButtonBase';
+import Grid from '@material-ui/core/Grid';
+import Paper from '@material-ui/core/Paper';
 
 
 function LandingPage() {
@@ -25,11 +28,32 @@ function LandingPage() {
         <Button color="inherit">Login</Button>
       </Toolbar>
     </AppBar>
-    <Box className={classes.box} clone>
-    <Button variant="contained" color="primary">
-        Let's Start
-      </Button>
-    </Box>
+    <Paper className={classes.paper}>
+        <Grid   container spacing={2}>
+          <Grid item xs={12} sm container>
+            <Grid item xs container direction="column" >
+              <Grid item xs>
+                <Typography gutterBottom >
+                  <h1>Industrial<br/>Preparation<br/>Programme</h1>
+                </Typography>
+                <Typography variant="body2" color="textSecondary">
+                <h4>
+                Every landing page needs a small description after the big bold
+                title, that{"'"}s why we added this text here. Add here all the
+                information that can make you or your product create the first
+                impression.
+              </h4>
+                </Typography>
+              </Grid>
+              <Grid item>
+              <Button variant="contained" color="primary">
+                    Let's Start
+                </Button>
+              </Grid>
+            </Grid>
+          </Grid>
+        </Grid>
+      </Paper>
     
   </div>
   );
@@ -54,5 +78,20 @@ const useStyles = makeStyles((theme) => ({
     box:{
         marginTop:'20%',
         marginLeft:'10%'
-    }
+    },
+    paper: {
+        padding: theme.spacing(2),
+        maxWidth: 300,
+        marginTop:'7.5%',
+        marginLeft:'5.5%'
+      },
+      img: {
+        margin: 'auto',
+        display: 'block',
+        maxWidth: '100%',
+        maxHeight: '100%',
+      },
+      desc:{
+        marginTop:'15%'
+    },
   }));
