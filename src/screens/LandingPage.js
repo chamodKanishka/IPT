@@ -23,7 +23,7 @@ function LandingPage() {
         <Button color="inherit">Button2</Button>
       </Toolbar>
     </AppBar>
-    <Paper className={classes.paper} variant="outlined">
+    <Paper className={classes.paper} variant="outlined" elevation={5}>
         <Grid   container spacing={2}>
           <Grid item xs={12} sm container>
             <Grid item xs container direction="column" >
