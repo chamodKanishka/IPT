@@ -10,11 +10,11 @@ import Button from '@material-ui/core/Button';
 import TextField from '@material-ui/core/TextField';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
 import Checkbox from '@material-ui/core/Checkbox';
-import Box from '@material-ui/core/Box';
+
 import FormControl from '@material-ui/core/FormControl';
 
 
-export default  function Login() {
+export default  function Register() {
 
     const classes = useStyles();
 
@@ -35,7 +35,7 @@ export default  function Login() {
             <CardActionArea>
                 <CardContent>
                 <Typography gutterBottom variant="h5" component="h1">
-                    Login
+                    Register
                 </Typography>
                 </CardContent>
             </CardActionArea>
@@ -44,7 +44,7 @@ export default  function Login() {
             <TextField id="filled-basic" label="Password" variant="filled" className={classes.input}
             type="password"
             autoComplete="current-password"/>
-            <Box className={classes.box} component="span" m={1}>
+
             <FormControl className={classes.checkbox} component="fieldset">
             <FormControlLabel
                 control={
@@ -59,10 +59,10 @@ export default  function Login() {
                 label="Remember Me"
             />
             </FormControl>
+            <br/>
             <Button className={classes.button} variant="contained" color="primary">
-            Login
+            Register
             </Button>
-            </Box>
             </Card>
             </Typography>
             </Container>
@@ -71,9 +71,6 @@ export default  function Login() {
 }
 
 const useStyles = makeStyles({
-    box:{
-        float: 'right'
-    },
     root: {
       maxWidth: '100%',
       marginTop:'20%'
