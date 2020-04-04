@@ -4,14 +4,9 @@ import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
 import Button from '@material-ui/core/Button';
-import IconButton from '@material-ui/core/IconButton';
-import MenuIcon from '@material-ui/icons/Menu';
-import Box from '@material-ui/core/Box';
-import ButtonBase from '@material-ui/core/ButtonBase';
 import Grid from '@material-ui/core/Grid';
 import Paper from '@material-ui/core/Paper';
-import Footer from './subComponents/Footer'
-import { BottomNavigation } from '@material-ui/core';
+import Footer from './subComponents/Footer';
 
 function LandingPage() {
     const classes = useStyles();
@@ -19,7 +14,7 @@ function LandingPage() {
   return (
       <div className={classes.main}>
     <div className={classes.root}>
-    <AppBar className={classes.appbar} position="static">
+    <AppBar className={classes.appbar} position="static" elevation={0}>
       <Toolbar>
         <Typography variant="h6" className={classes.title}>
           Industiral Preparation Programme
@@ -28,7 +23,7 @@ function LandingPage() {
         <Button color="inherit">Button2</Button>
       </Toolbar>
     </AppBar>
-    <Paper className={classes.paper}>
+    <Paper className={classes.paper} variant="outlined">
         <Grid   container spacing={2}>
           <Grid item xs={12} sm container>
             <Grid item xs container direction="column" >
@@ -70,11 +65,11 @@ const useStyles = makeStyles((theme) => ({
     },
     root: {
       flexGrow: 1,
-      height:'96vh',
+      height:'94vh',
       
     },
     appbar:{
-        backgroundColor: 'rgba(255, 255, 255, 0.05)'
+        background: 'transparent',
     },
     menuButton: {
       marginRight: theme.spacing(2),
@@ -91,7 +86,7 @@ const useStyles = makeStyles((theme) => ({
         maxWidth: 300,
         marginTop:'7.5%',
         marginLeft:'5.5%',
-        backgroundColor: 'rgba(255, 255, 255, 0.05)',
+        backgroundColor: 'rgba(0, 0, 0, 0.5)',
         color:'white'
       },
       img: {
@@ -104,7 +99,8 @@ const useStyles = makeStyles((theme) => ({
         marginTop:'15%'
     },
     Footer:{
-        marginTop:'100px'
+        marginTop:'100px',
+        backgroundColor: 'rgba(0, 0, 0, 0.5)',
     },
     content:{
         color:'white'
