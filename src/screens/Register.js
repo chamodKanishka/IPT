@@ -10,7 +10,7 @@ import Button from '@material-ui/core/Button';
 import TextField from '@material-ui/core/TextField';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
 import Checkbox from '@material-ui/core/Checkbox';
-
+import Box from '@material-ui/core/Box';
 import FormControl from '@material-ui/core/FormControl';
 
 
@@ -39,12 +39,19 @@ export default  function Register() {
                 </Typography>
                 </CardContent>
             </CardActionArea>
-            <TextField id="filled-basic" label="User Name" variant="filled" className={classes.input}/>
+            <TextField id="filled-basic" label="Firts Name" variant="filled" className={classes.input}/>
+            <TextField id="filled-basic" label="Last Name" variant="filled" className={classes.input}/>
+            <TextField id="filled-basic" label="Email" variant="filled" className={classes.input}/>
+            <TextField id="filled-basic" label="Contact No" variant="filled" className={classes.input}/>
 
             <TextField id="filled-basic" label="Password" variant="filled" className={classes.input}
             type="password"
             autoComplete="current-password"/>
+            <TextField id="filled-basic" label="Confirm Password" variant="filled" className={classes.input}
+            type="password"
+            autoComplete="current-password"/>
 
+            <Box className={classes.box} component="span" m={1}>
             <FormControl className={classes.checkbox} component="fieldset">
             <FormControlLabel
                 control={
@@ -56,13 +63,13 @@ export default  function Register() {
                 />
                 }
                 labelPlacement="end"
-                label="Remember Me"
+                label="Show Password"
             />
             </FormControl>
-            <br/>
             <Button className={classes.button} variant="contained" color="primary">
             Register
             </Button>
+            </Box>
             </Card>
             </Typography>
             </Container>
@@ -71,9 +78,12 @@ export default  function Register() {
 }
 
 const useStyles = makeStyles({
+    box:{
+        float: 'right'
+    },
     root: {
       maxWidth: '100%',
-      marginTop:'20%'
+      marginTop:'10%'
     },
     media: {
       height: 140,
@@ -81,6 +91,8 @@ const useStyles = makeStyles({
     input:{
         width:'13cm',
         margin:'5%',
+        marginTop:'5px',
+        marginBottom:'10px',
     },
     checkbox:{
         marginRight:'100px'

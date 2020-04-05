@@ -1,10 +1,10 @@
 import React from 'react';
-import Login from './screens/Login'
+import Register from './screens/Register'
 import './App.css';
 
 function App() {
   return (
-    <Login/>
+    <Register/>
   );
 }
 
