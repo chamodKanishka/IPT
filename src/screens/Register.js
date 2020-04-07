@@ -12,6 +12,8 @@ import FormControlLabel from '@material-ui/core/FormControlLabel';
 import Checkbox from '@material-ui/core/Checkbox';
 import Box from '@material-ui/core/Box';
 import FormControl from '@material-ui/core/FormControl';
+import Logo from '../images/login.jpg'
+
 
 
 export default  function Register() {
@@ -27,11 +29,13 @@ export default  function Register() {
       };
 
   return (
+    <div className={classes.main}>
     <React.Fragment>
       <CssBaseline />
       <Container maxWidth="sm">
         <Typography component="div" style={{ backgroundColor: 'rbg(0,0,0,0)', height: '80vh' }}>
-        <Card className={classes.root}>
+          <div className={classes.root}>
+        <Card className={classes.card} elevation={10}>
             <CardActionArea>
                 <CardContent>
                 <Typography gutterBottom variant="h5" component="h1">
@@ -71,19 +75,31 @@ export default  function Register() {
             </Button>
             </Box>
             </Card>
+            </div>
             </Typography>
             </Container>
             </React.Fragment>
+      </div>
   );
 }
 
 const useStyles = makeStyles({
+  main:{
+    backgroundImage: `url(${Logo})`,
+    backgroundSize: 'cover' , 
+    height: '100vh'
+  },
     box:{
         float: 'right'
     },
     root: {
       maxWidth: '100%',
-      marginTop:'10%'
+      paddingTop:'15%',
+      backgroundColor: 'rgba(255,255,255,0)'
+     
+    },
+    card:{
+      backgroundColor:'rgba(255,255,255,0)'
     },
     media: {
       height: 140,
