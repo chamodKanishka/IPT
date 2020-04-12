@@ -10,15 +10,24 @@ import Typography from '@material-ui/core/Typography';
 import CompanyHomeNav from './companyHomeNav'
 import image from '../../images/person.jpg'
 import Job from '../../images/jobs.jpg';
-import IconButton from '@material-ui/core/IconButton';
-import SkipPreviousIcon from '@material-ui/icons/SkipPrevious';
-import PlayArrowIcon from '@material-ui/icons/PlayArrow';
-import SkipNextIcon from '@material-ui/icons/SkipNext';
-  
+import Popover from '@material-ui/core/Popover';
 
 export default  function CompanyHome() {
     const classes = useStyles();
     const theme = useTheme();
+
+    const [anchorEl, setAnchorEl] = React.useState(null);
+
+    const handleClick = (event) => {
+        setAnchorEl(event.currentTarget);
+    };
+
+    const handleClose = () => {
+        setAnchorEl(null);
+    };
+
+    const open = Boolean(anchorEl);
+    const id = open ? 'simple-popover' : undefined;
 
   return (
       <div>
@@ -44,9 +53,25 @@ export default  function CompanyHome() {
                 </CardContent>
             </CardActionArea>
             <CardActions>
-                <Button size="small" color="primary">
+                <Button size="small" color="primary" aria-describedby={id} variant="contained" color="primary" onClick={handleClick}>
                 Status
                 </Button>
+                <Popover
+                    id={id}
+                    open={open}
+                    anchorEl={anchorEl}
+                    onClose={handleClose}
+                    anchorOrigin={{
+                    vertical: 'bottom',
+                    horizontal: 'center',
+                    }}
+                    transformOrigin={{
+                    vertical: 'top',
+                    horizontal: 'center',
+                    }}
+                >
+        <Typography className={classes.typography}>Pending</Typography>
+      </Popover>
             </CardActions>
             </Card>
 
@@ -248,5 +273,8 @@ const useStyles = makeStyles((theme) => ({
   miniroot: {
     display: 'flex',
     margin:30,
-  }
+  },
+  typography: {
+    padding: theme.spacing(2),
+  },
   }));

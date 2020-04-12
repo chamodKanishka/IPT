@@ -9,13 +9,35 @@ import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
 import StudentHomeNav from './studentHomeNav';
 import Job from '../../images/jobs.jpg'
-
-
+import Snackbar from '@material-ui/core/Snackbar';
+import IconButton from '@material-ui/core/IconButton';
+import CloseIcon from '@material-ui/icons/Close';
+import Collapse from '@material-ui/core/Collapse';
 
   
 
 export default  function StudentHome() {
     const classes = useStyles();
+
+    const [open, setOpen] = React.useState(false);
+
+    const handleClick = () => {
+        setOpen(true);
+    };
+
+    const handleClose = (event, reason) => {
+        if (reason === 'clickaway') {
+        return;
+        }
+
+        setOpen(false);
+    };
+
+    const [expanded, setExpanded] = React.useState(false);
+
+    const handleExpandClick = () => {
+        setExpanded(!expanded);
+    };
 
   return (
       <div>
@@ -41,13 +63,34 @@ export default  function StudentHome() {
                 </CardContent>
             </CardActionArea>
             <CardActions>
-                <Button size="small" color="primary">
+                <Button size="small" color="primary" onClick={handleClick}>
                 Apply
                 </Button>
-                <Button size="small" color="primary">
+                <Snackbar
+                        anchorOrigin={{
+                        vertical: 'bottom',
+                        horizontal: 'left',
+                        }}
+                        open={open}
+                        autoHideDuration={10000}
+                        onClose={handleClose}
+                        message="Applied"
+                        action={
+                        <React.Fragment>
+                            <Button color="secondary" size="small" onClick={handleClose}>
+                            UNDO
+                            </Button>
+                            <IconButton size="small" aria-label="close" color="inherit" onClick={handleClose}>
+                            <CloseIcon fontSize="small" />
+                            </IconButton>
+                        </React.Fragment>
+                        }
+                    />
+                <Button size="small" color="primary" onClick={handleExpandClick} aria-expanded={expanded} aria-label="show more">
                 Requirements
                 </Button>
             </CardActions>
+
             </Card>
 
             <Card className={classes.cardroot}>
@@ -134,7 +177,7 @@ export default  function StudentHome() {
             </div>
 
             <div className={classes.body}>
-                <h3 className={classes.activity}>Recently Viewed Jobs</h3>
+                <h3 className={classes.activity}>Recently Applied Jobs</h3>
                 <div className={classes.recent}>
             <Card className={classes.cardroot}>
             <CardActionArea>
@@ -277,5 +320,12 @@ const useStyles = makeStyles((theme) => ({
       },
       activity:{
         color: '#004b96'
-      }
+      },
+      expand: {
+        transform: 'rotate(0deg)',
+        marginLeft: 'auto',
+        transition: theme.transitions.create('transform', {
+          duration: theme.transitions.duration.shortest,
+        }),
+      },
   }));
