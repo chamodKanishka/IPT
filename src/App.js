@@ -1,10 +1,10 @@
 import React from 'react';
-import Register from './screens/Register';
+import StudentHome from './screens/studentArea/studentHome';
 import './App.css';
 
 function App() {
   return (
-    <Register/>
+    <StudentHome/>
   );
 }
 
