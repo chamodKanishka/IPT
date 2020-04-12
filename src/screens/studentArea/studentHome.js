@@ -9,11 +9,6 @@ import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
 import StudentHomeNav from './studentHomeNav';
 
-import GridList from '@material-ui/core/GridList';
-import GridListTile from '@material-ui/core/GridListTile';
-import GridListTileBar from '@material-ui/core/GridListTileBar';
-import IconButton from '@material-ui/core/IconButton';
-import StarBorderIcon from '@material-ui/icons/StarBorder';
 
 
   
@@ -25,6 +20,7 @@ export default  function StudentHome() {
       <div>
             <StudentHomeNav/>
             <div className={classes.body}>
+                <h3 className={classes.activity}>Recently Viewed Jobs</h3>
                 <div className={classes.recent}>
             <Card className={classes.cardroot}>
             <CardActionArea>
@@ -45,37 +41,10 @@ export default  function StudentHome() {
             </CardActionArea>
             <CardActions>
                 <Button size="small" color="primary">
-                Share
+                Apply
                 </Button>
                 <Button size="small" color="primary">
-                Learn More
-                </Button>
-            </CardActions>
-            </Card>
-
-            <Card className={classes.cardroot}>
-            <CardActionArea>
-                <CardMedia
-                className={classes.media}
-                image="../../images/jobs.jpg"
-                title="Contemplative Reptile"
-                />
-                <CardContent>
-                <Typography gutterBottom variant="h5" component="h2">
-                    Title
-                </Typography>
-                <Typography variant="body2" color="textSecondary" component="p">
-                    Short Description are a widespread group of squamate reptiles, with over 6,000 species, ranging
-                    across all continents except Antarctica
-                </Typography>
-                </CardContent>
-            </CardActionArea>
-            <CardActions>
-                <Button size="small" color="primary">
-                Share
-                </Button>
-                <Button size="small" color="primary">
-                Learn More
+                Requirements
                 </Button>
             </CardActions>
             </Card>
@@ -99,37 +68,10 @@ export default  function StudentHome() {
             </CardActionArea>
             <CardActions>
                 <Button size="small" color="primary">
-                Share
+                Apply
                 </Button>
                 <Button size="small" color="primary">
-                Learn More
-                </Button>
-            </CardActions>
-            </Card>
-
-            <Card className={classes.cardroot}>
-            <CardActionArea>
-                <CardMedia
-                className={classes.media}
-                image="../../images/jobs.jpg"
-                title="Contemplative Reptile"
-                />
-                <CardContent>
-                <Typography gutterBottom variant="h5" component="h2">
-                    Title
-                </Typography>
-                <Typography variant="body2" color="textSecondary" component="p">
-                    Short Description are a widespread group of squamate reptiles, with over 6,000 species, ranging
-                    across all continents except Antarctica
-                </Typography>
-                </CardContent>
-            </CardActionArea>
-            <CardActions>
-                <Button size="small" color="primary">
-                Share
-                </Button>
-                <Button size="small" color="primary">
-                Learn More
+                Requirements
                 </Button>
             </CardActions>
             </Card>
@@ -153,37 +95,10 @@ export default  function StudentHome() {
             </CardActionArea>
             <CardActions>
                 <Button size="small" color="primary">
-                Share
+                Apply
                 </Button>
                 <Button size="small" color="primary">
-                Learn More
-                </Button>
-            </CardActions>
-            </Card>
-
-            <Card className={classes.cardroot}>
-            <CardActionArea>
-                <CardMedia
-                className={classes.media}
-                image="../../images/jobs.jpg"
-                title="Contemplative Reptile"
-                />
-                <CardContent>
-                <Typography gutterBottom variant="h5" component="h2">
-                    Title
-                </Typography>
-                <Typography variant="body2" color="textSecondary" component="p">
-                    Short Description are a widespread group of squamate reptiles, with over 6,000 species, ranging
-                    across all continents except Antarctica
-                </Typography>
-                </CardContent>
-            </CardActionArea>
-            <CardActions>
-                <Button size="small" color="primary">
-                Share
-                </Button>
-                <Button size="small" color="primary">
-                Learn More
+                Requirements
                 </Button>
             </CardActions>
             </Card>
@@ -207,10 +122,87 @@ export default  function StudentHome() {
             </CardActionArea>
             <CardActions>
                 <Button size="small" color="primary">
-                Share
+                Apply
                 </Button>
                 <Button size="small" color="primary">
-                Learn More
+                Requirements
+                </Button>
+            </CardActions>
+            </Card>
+            </div>
+            </div>
+
+            <div className={classes.body}>
+                <h3 className={classes.activity}>Recently Viewed Jobs</h3>
+                <div className={classes.recent}>
+            <Card className={classes.cardroot}>
+            <CardActionArea>
+                <CardMedia
+                className={classes.media}
+                image="../../images/jobs.jpg"
+                title="Contemplative Reptile"
+                />
+                <CardContent>
+                <Typography gutterBottom variant="h5" component="h2">
+                    Title
+                </Typography>
+                <Typography variant="body2" color="textSecondary" component="p">
+                    Short Description are a widespread group of squamate reptiles, with over 6,000 species, ranging
+                    across all continents except Antarctica
+                </Typography>
+                </CardContent>
+            </CardActionArea>
+            <CardActions>
+            <Button size="small" color="primary">
+                Status
+                </Button>
+            </CardActions>
+            </Card>
+
+            <Card className={classes.cardroot}>
+            <CardActionArea>
+                <CardMedia
+                className={classes.media}
+                image="../../images/jobs.jpg"
+                title="Contemplative Reptile"
+                />
+                <CardContent>
+                <Typography gutterBottom variant="h5" component="h2">
+                    Title
+                </Typography>
+                <Typography variant="body2" color="textSecondary" component="p">
+                    Short Description are a widespread group of squamate reptiles, with over 6,000 species, ranging
+                    across all continents except Antarctica
+                </Typography>
+                </CardContent>
+            </CardActionArea>
+            <CardActions>
+            <Button size="small" color="primary">
+                Status
+                </Button>
+            </CardActions>
+            </Card>
+
+            <Card className={classes.cardroot}>
+            <CardActionArea>
+                <CardMedia
+                className={classes.media}
+                image="../../images/jobs.jpg"
+                title="Contemplative Reptile"
+                />
+                <CardContent>
+                <Typography gutterBottom variant="h5" component="h2">
+                    Title
+                </Typography>
+                <Typography variant="body2" color="textSecondary" component="p">
+                    Short Description are a widespread group of squamate reptiles, with over 6,000 species, ranging
+                    across all continents except Antarctica
+                </Typography>
+                </CardContent>
+            </CardActionArea>
+            <CardActions>
+            <Button size="small" color="primary">
+                Status
                 </Button>
             </CardActions>
             </Card>
@@ -234,64 +226,7 @@ export default  function StudentHome() {
             </CardActionArea>
             <CardActions>
                 <Button size="small" color="primary">
-                Share
-                </Button>
-                <Button size="small" color="primary">
-                Learn More
-                </Button>
-            </CardActions>
-            </Card>
-
-            <Card className={classes.cardroot}>
-            <CardActionArea>
-                <CardMedia
-                className={classes.media}
-                image="../../images/jobs.jpg"
-                title="Contemplative Reptile"
-                />
-                <CardContent>
-                <Typography gutterBottom variant="h5" component="h2">
-                    Title
-                </Typography>
-                <Typography variant="body2" color="textSecondary" component="p">
-                    Short Description are a widespread group of squamate reptiles, with over 6,000 species, ranging
-                    across all continents except Antarctica
-                </Typography>
-                </CardContent>
-            </CardActionArea>
-            <CardActions>
-                <Button size="small" color="primary">
-                Share
-                </Button>
-                <Button size="small" color="primary">
-                Learn More
-                </Button>
-            </CardActions>
-            </Card>
-
-            <Card className={classes.cardroot}>
-            <CardActionArea>
-                <CardMedia
-                className={classes.media}
-                image="../../images/jobs.jpg"
-                title="Contemplative Reptile"
-                />
-                <CardContent>
-                <Typography gutterBottom variant="h5" component="h2">
-                    Title
-                </Typography>
-                <Typography variant="body2" color="textSecondary" component="p">
-                    Short Description are a widespread group of squamate reptiles, with over 6,000 species, ranging
-                    across all continents except Antarctica
-                </Typography>
-                </CardContent>
-            </CardActionArea>
-            <CardActions>
-                <Button size="small" color="primary">
-                Share
-                </Button>
-                <Button size="small" color="primary">
-                Learn More
+                Status
                 </Button>
             </CardActions>
             </Card>
@@ -328,6 +263,7 @@ const useStyles = makeStyles((theme) => ({
         height: 140,
       },
       body: {
+          marginLeft:100,
           margin: 40,
           display: 'inline-block'
       },
@@ -337,5 +273,8 @@ const useStyles = makeStyles((theme) => ({
         justifyContent: 'space-around',
         overflow: 'hidden',
 
+      },
+      activity:{
+        color: '#004b96'
       }
   }));
