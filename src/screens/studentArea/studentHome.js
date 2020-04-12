@@ -1,21 +1,19 @@
 import React from 'react';
-import clsx from 'clsx';
 import { makeStyles } from '@material-ui/core/styles';
-import AppBar from '@material-ui/core/AppBar';
-import Toolbar from '@material-ui/core/Toolbar';
-import Typography from '@material-ui/core/Typography';
+import Card from '@material-ui/core/Card';
+import CardActionArea from '@material-ui/core/CardActionArea';
+import CardActions from '@material-ui/core/CardActions';
+import CardContent from '@material-ui/core/CardContent';
+import CardMedia from '@material-ui/core/CardMedia';
 import Button from '@material-ui/core/Button';
-import IconButton from '@material-ui/core/IconButton';
-import MenuIcon from '@material-ui/icons/Menu';
-import Drawer from '@material-ui/core/Drawer';
-import List from '@material-ui/core/List';
-import Divider from '@material-ui/core/Divider';
-import ListItem from '@material-ui/core/ListItem';
-import ListItemIcon from '@material-ui/core/ListItemIcon';
-import ListItemText from '@material-ui/core/ListItemText';
-import InboxIcon from '@material-ui/icons/MoveToInbox';
-import MailIcon from '@material-ui/icons/Mail';
+import Typography from '@material-ui/core/Typography';
+import StudentHomeNav from './studentHomeNav';
 
+import GridList from '@material-ui/core/GridList';
+import GridListTile from '@material-ui/core/GridListTile';
+import GridListTileBar from '@material-ui/core/GridListTileBar';
+import IconButton from '@material-ui/core/IconButton';
+import StarBorderIcon from '@material-ui/icons/StarBorder';
 
 
   
@@ -23,71 +21,283 @@ import MailIcon from '@material-ui/icons/Mail';
 export default  function StudentHome() {
     const classes = useStyles();
 
-    const [state, setState] = React.useState({
-        left: false,
-      });
-
-      const toggleDrawer = (anchor, open) => (event) => {
-        if (event.type === 'keydown' && (event.key === 'Tab' || event.key === 'Shift')) {
-          return;
-        }
-    
-        setState({ ...state, [anchor]: open });
-      };
-
-      const list = (anchor) => (
-        <div
-          className={clsx(classes.list, {
-            [classes.fullList]: anchor === 'top' || anchor === 'bottom',
-          })}
-          role="presentation"
-          onClick={toggleDrawer(anchor, false)}
-          onKeyDown={toggleDrawer(anchor, false)}
-        >
-          <List>
-            {['Inbox', 'Starred', 'Send email', 'Drafts'].map((text, index) => (
-              <ListItem button key={text}>
-                <ListItemIcon>{index % 2 === 0 ? <InboxIcon /> : <MailIcon />}</ListItemIcon>
-                <ListItemText primary={text} />
-              </ListItem>
-            ))}
-          </List>
-          <Divider />
-          <List>
-            {['All mail', 'Trash', 'Spam'].map((text, index) => (
-              <ListItem button key={text}>
-                <ListItemIcon>{index % 2 === 0 ? <InboxIcon /> : <MailIcon />}</ListItemIcon>
-                <ListItemText primary={text} />
-              </ListItem>
-            ))}
-          </List>
-        </div>
-      );
   return (
       <div>
-            <div className={classes.root}>
-            <AppBar position="static">
-            <Toolbar>
-            <div>
-            {['left'].map((anchor) => (
-                <React.Fragment key={anchor}>
-                <IconButton edge="start" onClick={toggleDrawer(anchor, true)} className={classes.menuButton} color="inherit" aria-label="menu">
-                <MenuIcon />
-                </IconButton>
-                <Drawer anchor={anchor} open={state[anchor]} onClose={toggleDrawer(anchor, false)}>
-                    {list(anchor)}
-                </Drawer>
-                </React.Fragment>
-                ))}
-                </div>
-                <Typography variant="h6" className={classes.title}>
-                IPT of NSBM
+            <StudentHomeNav/>
+            <div className={classes.body}>
+                <div className={classes.recent}>
+            <Card className={classes.cardroot}>
+            <CardActionArea>
+                <CardMedia
+                className={classes.media}
+                image="../../images/jobs.jpg"
+                title="Contemplative Reptile"
+                />
+                <CardContent>
+                <Typography gutterBottom variant="h5" component="h2">
+                    Title
                 </Typography>
-                <Button color="inherit">Login</Button>
-            </Toolbar>
-            </AppBar>
-        </div>
-        </div>
+                <Typography variant="body2" color="textSecondary" component="p">
+                    Short Description are a widespread group of squamate reptiles, with over 6,000 species, ranging
+                    across all continents except Antarctica
+                </Typography>
+                </CardContent>
+            </CardActionArea>
+            <CardActions>
+                <Button size="small" color="primary">
+                Share
+                </Button>
+                <Button size="small" color="primary">
+                Learn More
+                </Button>
+            </CardActions>
+            </Card>
+
+            <Card className={classes.cardroot}>
+            <CardActionArea>
+                <CardMedia
+                className={classes.media}
+                image="../../images/jobs.jpg"
+                title="Contemplative Reptile"
+                />
+                <CardContent>
+                <Typography gutterBottom variant="h5" component="h2">
+                    Title
+                </Typography>
+                <Typography variant="body2" color="textSecondary" component="p">
+                    Short Description are a widespread group of squamate reptiles, with over 6,000 species, ranging
+                    across all continents except Antarctica
+                </Typography>
+                </CardContent>
+            </CardActionArea>
+            <CardActions>
+                <Button size="small" color="primary">
+                Share
+                </Button>
+                <Button size="small" color="primary">
+                Learn More
+                </Button>
+            </CardActions>
+            </Card>
+
+            <Card className={classes.cardroot}>
+            <CardActionArea>
+                <CardMedia
+                className={classes.media}
+                image="../../images/jobs.jpg"
+                title="Contemplative Reptile"
+                />
+                <CardContent>
+                <Typography gutterBottom variant="h5" component="h2">
+                    Title
+                </Typography>
+                <Typography variant="body2" color="textSecondary" component="p">
+                    Short Description are a widespread group of squamate reptiles, with over 6,000 species, ranging
+                    across all continents except Antarctica
+                </Typography>
+                </CardContent>
+            </CardActionArea>
+            <CardActions>
+                <Button size="small" color="primary">
+                Share
+                </Button>
+                <Button size="small" color="primary">
+                Learn More
+                </Button>
+            </CardActions>
+            </Card>
+
+            <Card className={classes.cardroot}>
+            <CardActionArea>
+                <CardMedia
+                className={classes.media}
+                image="../../images/jobs.jpg"
+                title="Contemplative Reptile"
+                />
+                <CardContent>
+                <Typography gutterBottom variant="h5" component="h2">
+                    Title
+                </Typography>
+                <Typography variant="body2" color="textSecondary" component="p">
+                    Short Description are a widespread group of squamate reptiles, with over 6,000 species, ranging
+                    across all continents except Antarctica
+                </Typography>
+                </CardContent>
+            </CardActionArea>
+            <CardActions>
+                <Button size="small" color="primary">
+                Share
+                </Button>
+                <Button size="small" color="primary">
+                Learn More
+                </Button>
+            </CardActions>
+            </Card>
+
+            <Card className={classes.cardroot}>
+            <CardActionArea>
+                <CardMedia
+                className={classes.media}
+                image="../../images/jobs.jpg"
+                title="Contemplative Reptile"
+                />
+                <CardContent>
+                <Typography gutterBottom variant="h5" component="h2">
+                    Title
+                </Typography>
+                <Typography variant="body2" color="textSecondary" component="p">
+                    Short Description are a widespread group of squamate reptiles, with over 6,000 species, ranging
+                    across all continents except Antarctica
+                </Typography>
+                </CardContent>
+            </CardActionArea>
+            <CardActions>
+                <Button size="small" color="primary">
+                Share
+                </Button>
+                <Button size="small" color="primary">
+                Learn More
+                </Button>
+            </CardActions>
+            </Card>
+
+            <Card className={classes.cardroot}>
+            <CardActionArea>
+                <CardMedia
+                className={classes.media}
+                image="../../images/jobs.jpg"
+                title="Contemplative Reptile"
+                />
+                <CardContent>
+                <Typography gutterBottom variant="h5" component="h2">
+                    Title
+                </Typography>
+                <Typography variant="body2" color="textSecondary" component="p">
+                    Short Description are a widespread group of squamate reptiles, with over 6,000 species, ranging
+                    across all continents except Antarctica
+                </Typography>
+                </CardContent>
+            </CardActionArea>
+            <CardActions>
+                <Button size="small" color="primary">
+                Share
+                </Button>
+                <Button size="small" color="primary">
+                Learn More
+                </Button>
+            </CardActions>
+            </Card>
+
+            <Card className={classes.cardroot}>
+            <CardActionArea>
+                <CardMedia
+                className={classes.media}
+                image="../../images/jobs.jpg"
+                title="Contemplative Reptile"
+                />
+                <CardContent>
+                <Typography gutterBottom variant="h5" component="h2">
+                    Title
+                </Typography>
+                <Typography variant="body2" color="textSecondary" component="p">
+                    Short Description are a widespread group of squamate reptiles, with over 6,000 species, ranging
+                    across all continents except Antarctica
+                </Typography>
+                </CardContent>
+            </CardActionArea>
+            <CardActions>
+                <Button size="small" color="primary">
+                Share
+                </Button>
+                <Button size="small" color="primary">
+                Learn More
+                </Button>
+            </CardActions>
+            </Card>
+
+            <Card className={classes.cardroot}>
+            <CardActionArea>
+                <CardMedia
+                className={classes.media}
+                image="../../images/jobs.jpg"
+                title="Contemplative Reptile"
+                />
+                <CardContent>
+                <Typography gutterBottom variant="h5" component="h2">
+                    Title
+                </Typography>
+                <Typography variant="body2" color="textSecondary" component="p">
+                    Short Description are a widespread group of squamate reptiles, with over 6,000 species, ranging
+                    across all continents except Antarctica
+                </Typography>
+                </CardContent>
+            </CardActionArea>
+            <CardActions>
+                <Button size="small" color="primary">
+                Share
+                </Button>
+                <Button size="small" color="primary">
+                Learn More
+                </Button>
+            </CardActions>
+            </Card>
+
+            <Card className={classes.cardroot}>
+            <CardActionArea>
+                <CardMedia
+                className={classes.media}
+                image="../../images/jobs.jpg"
+                title="Contemplative Reptile"
+                />
+                <CardContent>
+                <Typography gutterBottom variant="h5" component="h2">
+                    Title
+                </Typography>
+                <Typography variant="body2" color="textSecondary" component="p">
+                    Short Description are a widespread group of squamate reptiles, with over 6,000 species, ranging
+                    across all continents except Antarctica
+                </Typography>
+                </CardContent>
+            </CardActionArea>
+            <CardActions>
+                <Button size="small" color="primary">
+                Share
+                </Button>
+                <Button size="small" color="primary">
+                Learn More
+                </Button>
+            </CardActions>
+            </Card>
+
+            <Card className={classes.cardroot}>
+            <CardActionArea>
+                <CardMedia
+                className={classes.media}
+                image="../../images/jobs.jpg"
+                title="Contemplative Reptile"
+                />
+                <CardContent>
+                <Typography gutterBottom variant="h5" component="h2">
+                    Title
+                </Typography>
+                <Typography variant="body2" color="textSecondary" component="p">
+                    Short Description are a widespread group of squamate reptiles, with over 6,000 species, ranging
+                    across all continents except Antarctica
+                </Typography>
+                </CardContent>
+            </CardActionArea>
+            <CardActions>
+                <Button size="small" color="primary">
+                Share
+                </Button>
+                <Button size="small" color="primary">
+                Learn More
+                </Button>
+            </CardActions>
+            </Card>
+            </div>
+            </div>
+            </div>
         
   );
 }
@@ -109,4 +319,23 @@ const useStyles = makeStyles((theme) => ({
       fullList: {
         width: 'auto',
       },
+      cardroot: {
+        maxWidth: 250,
+        maxHeight: 360,
+        margin: 20,
+      },
+      media: {
+        height: 140,
+      },
+      body: {
+          margin: 40,
+          display: 'inline-block'
+      },
+      recent:{
+        display: 'flex',
+        flexWrap: 'wrap',
+        justifyContent: 'space-around',
+        overflow: 'hidden',
+
+      }
   }));
