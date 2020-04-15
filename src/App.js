@@ -1,5 +1,5 @@
 import React from 'react';
-import StudentHome from './screens/studentArea/studentProfile';
+import StudentHome from './screens/companyArea/addOpportunities';
 import './App.css';
 
 function App() {
