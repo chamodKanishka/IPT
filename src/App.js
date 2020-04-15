@@ -1,10 +1,10 @@
 import React from 'react';
-import StudentsSection from './screens/companyArea/studentsSection';
+import Applications from './screens/companyArea/applications';
 import './App.css';
 
 function App() {
   return (
-    <StudentsSection/>
+    <Applications/>
   );
 }
 
