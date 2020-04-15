@@ -8,7 +8,7 @@ import Radio from '@material-ui/core/Radio';
 import RadioGroup from '@material-ui/core/RadioGroup';
 import Button from '@material-ui/core/Button';
 
-export default  function AddOpportunities() {
+export default  function AddEvents() {
     const classes = useStyles();
 
   return (
@@ -17,7 +17,7 @@ export default  function AddOpportunities() {
             <div className={classes.body}>
             <form className={classes.root} noValidate autoComplete="off">
       <div>
-      <h3 className={classes.h3}>Title</h3>
+      <h3 className={classes.h3}>Event Title</h3>
         <TextField 
         required 
         id="standard-required" 
@@ -26,7 +26,19 @@ export default  function AddOpportunities() {
             readOnly: false,
           }} 
         defaultValue="" />
-        <h3 className={classes.h3}>Description</h3>
+        <form className={classes.container} noValidate>
+        <TextField
+            id="date"
+            label="Event Date"
+            type="date"
+            defaultValue="2020-02-02"
+            className={classes.textField}
+            InputLabelProps={{
+            shrink: true,
+            }}
+        />
+        </form>
+        <h3 className={classes.h3}>Event Description</h3>
         <TextField
         className={classes.multiline}
           id="filled-multiline-static"
@@ -37,12 +49,6 @@ export default  function AddOpportunities() {
           defaultValue=""
           variant="filled"
         />
-        <h3 className={classes.h3}>Category</h3>
-        <RadioGroup row aria-label="position" name="position" defaultValue="top">
-        <FormControlLabel value="full" control={<Radio color="primary" />} label="Full Time" />
-        <FormControlLabel value="part" control={<Radio color="primary" />} label="Part Time" />
-        <FormControlLabel value="intern" control={<Radio color="primary" />} label="Internship" />
-        </RadioGroup>
         <Button variant="contained" color="primary" className={classes.button}>
         Submit Application
         </Button>
@@ -135,4 +141,13 @@ const useStyles = makeStyles((theme) => ({
   h3:{
     color:'#3f51b5',
     },
+    container: {
+        display: 'flex',
+        flexWrap: 'wrap',
+      },
+      textField: {
+        marginLeft: theme.spacing(1),
+        marginRight: theme.spacing(1),
+        width: 200,
+      },
   }));
