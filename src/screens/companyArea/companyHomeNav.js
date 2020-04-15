@@ -14,7 +14,9 @@ import ListItem from '@material-ui/core/ListItem';
 import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
 import InboxIcon from '@material-ui/icons/MoveToInbox';
+import AddCircleIcon from '@material-ui/icons/AddCircleOutlined'
 import MailIcon from '@material-ui/icons/Mail';
+
 
 
 
@@ -47,9 +49,9 @@ export default  function CompanyHomeNav() {
           onKeyDown={toggleDrawer(anchor, false)}
         >
           <List>
-            {['Profile', 'Settings', 'Messages', 'Help & Support'].map((text, index) => (
+            {['Profile', 'New Opportunities', 'Messages', 'Help & Support'].map((text, index) => (
               <ListItem button key={text}>
-                <ListItemIcon>{index % 2 === 0 ? <InboxIcon /> : <MailIcon />}</ListItemIcon>
+                <ListItemIcon>{index % 2 === 0 ? <InboxIcon /> : <AddCircleIcon />}</ListItemIcon>
                 <ListItemText primary={text} />
               </ListItem>
             ))}
@@ -58,7 +60,7 @@ export default  function CompanyHomeNav() {
           <List>
             {['other 1', 'other 2', 'other 3'].map((text, index) => (
               <ListItem button key={text}>
-                <ListItemIcon>{index % 2 === 0 ? <InboxIcon /> : <MailIcon />}</ListItemIcon>
+                <ListItemIcon>{index % 2 === 0 ? <InboxIcon /> : <add_circle />}</ListItemIcon>
                 <ListItemText primary={text} />
               </ListItem>
             ))}
