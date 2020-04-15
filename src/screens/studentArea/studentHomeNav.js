@@ -88,7 +88,7 @@ export default  function StudentHomeNav() {
                 <Button color="inherit" className={classes.menu}>Home</Button>
                 <Button color="inherit" className={classes.menu}>Opportunities</Button>
                 <Button color="inherit" className={classes.menu}>Companies</Button>
-                <Button color="inherit" className={classes.menu}>Professional Courses</Button>
+                <Button color="inherit" className={classes.menu}>Events</Button>
                 <Button color="inherit" className={classes.menu}>Log out</Button>
             </Toolbar>
             </AppBar>
@@ -117,6 +117,6 @@ const useStyles = makeStyles((theme) => ({
       },
 
     menu: {
-        marginLeft: 120,
+        marginLeft: 150,
       },
   }));
