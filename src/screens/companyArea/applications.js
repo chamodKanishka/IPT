@@ -11,23 +11,38 @@ import CompanyHomeNav from './companyHomeNav'
 import image from '../../images/person.jpg'
 import Job from '../../images/jobs.jpg';
 import Popover from '@material-ui/core/Popover';
+import Dialog from '@material-ui/core/Dialog';
+import DialogActions from '@material-ui/core/DialogActions';
+import DialogContent from '@material-ui/core/DialogContent';
+import DialogContentText from '@material-ui/core/DialogContentText';
+import DialogTitle from '@material-ui/core/DialogTitle';
 
 export default  function Applications() {
     const classes = useStyles();
     const theme = useTheme();
 
-    const [anchorEl, setAnchorEl] = React.useState(null);
 
-    const handleClick = (event) => {
-        setAnchorEl(event.currentTarget);
+    const [open, setOpen] = React.useState(false);
+    const [scroll, setScroll] = React.useState('paper');
+
+    const handleClickOpen = (scrollType) => () => {
+        setOpen(true);
+        setScroll(scrollType);
     };
 
     const handleClose = () => {
-        setAnchorEl(null);
+        setOpen(false);
     };
 
-    const open = Boolean(anchorEl);
-    const id = open ? 'simple-popover' : undefined;
+    const descriptionElementRef = React.useRef(null);
+    React.useEffect(() => {
+        if (open) {
+        const { current: descriptionElement } = descriptionElementRef;
+        if (descriptionElement !== null) {
+            descriptionElement.focus();
+        }
+        }
+    }, [open]);
 
   return (
       <div>
@@ -39,346 +54,51 @@ export default  function Applications() {
                 <div className={classes.details}>
                     <CardContent className={classes.content} >
                     <Typography component="h7" variant="h7">
-                        Name Here
-                    </Typography>
-                    <Typography className={classes.jobtitle }  variant="subtitle1" color="textSecondary">
-                        job title
+                        Job Title
                     </Typography>
                     </CardContent>
                 </div>
+                <Button size="small" color="primary" onClick={handleClickOpen('paper')}>Details</Button>
+                <Dialog
+                        open={open}
+                        onClose={handleClose}
+                        scroll={scroll}
+                        aria-labelledby="scroll-dialog-title"
+                        aria-describedby="scroll-dialog-description"
+                    >
+                        <DialogTitle id="scroll-dialog-title">Qualifications</DialogTitle>
+                        <DialogContent dividers={scroll === 'paper'}>
+                        <DialogContentText
+                            id="scroll-dialog-description"
+                            ref={descriptionElementRef}
+                            tabIndex={-1}
+                        >
+                            {[...new Array(50)]
+                            .map(
+                                () => `Cras mattis consectetur purus sit amet fermentum.
+                Cras justo odio, dapibus ac facilisis in, egestas eget quam.
+                Morbi leo risus, porta ac consectetur ac, vestibulum at eros.
+                Praesent commodo cursus magna, vel scelerisque nisl consectetur et.`,
+                            )
+                            .join('\n')}
+                        </DialogContentText>
+                        </DialogContent>
+                        <DialogActions>
+                        <Button onClick={handleClose} color="primary">
+                            Close
+                        </Button>
+                        <Button onClick={handleClose} color="primary">
+                            Download CV
+                        </Button>
+                        </DialogActions>
+                    </Dialog>
                 <CardMedia
                     className={classes.cover}
                     image={image}
                     title="Live from space album cover"
                 />
                 </Card>
-                <Card className={classes.miniroot} elevation={3}>
-                <div className={classes.details}>
-                    <CardContent className={classes.content} >
-                    <Typography component="h7" variant="h7">
-                        Name Here
-                    </Typography>
-                    <Typography className={classes.jobtitle } variant="subtitle1" color="textSecondary">
-                        job title
-                    </Typography>
-                    </CardContent>
-                </div>
-                <CardMedia
-                    className={classes.cover}
-                    image={image}
-                    title="Live from space album cover"
-                />
-                </Card>
-                <Card className={classes.miniroot} elevation={3}>
-                <div className={classes.details}>
-                    <CardContent className={classes.content} >
-                    <Typography component="h7" variant="h7">
-                        Name Here
-                    </Typography>
-                    <Typography className={classes.jobtitle } variant="subtitle1" color="textSecondary">
-                        job title
-                    </Typography>
-                    </CardContent>
-                </div>
-                <CardMedia
-                    className={classes.cover}
-                    image={image}
-                    title="Live from space album cover"
-                />
-                </Card>
-
-                <Card className={classes.miniroot} elevation={3}>
-                <div className={classes.details}>
-                    <CardContent className={classes.content} >
-                    <Typography component="h7" variant="h7">
-                        Name Here
-                    </Typography>
-                    <Typography className={classes.jobtitle }  variant="subtitle1" color="textSecondary">
-                        job title
-                    </Typography>
-                    </CardContent>
-                </div>
-                <CardMedia
-                    className={classes.cover}
-                    image={image}
-                    title="Live from space album cover"
-                />
-                </Card>
-                <Card className={classes.miniroot} elevation={3}>
-                <div className={classes.details}>
-                    <CardContent className={classes.content} >
-                    <Typography component="h7" variant="h7">
-                        Name Here
-                    </Typography>
-                    <Typography className={classes.jobtitle } variant="subtitle1" color="textSecondary">
-                        job title
-                    </Typography>
-                    </CardContent>
-                </div>
-                <CardMedia
-                    className={classes.cover}
-                    image={image}
-                    title="Live from space album cover"
-                />
-                </Card>
-                <Card className={classes.miniroot} elevation={3}>
-                <div className={classes.details}>
-                    <CardContent className={classes.content} >
-                    <Typography component="h7" variant="h7">
-                        Name Here
-                    </Typography>
-                    <Typography className={classes.jobtitle } variant="subtitle1" color="textSecondary">
-                        job title
-                    </Typography>
-                    </CardContent>
-                </div>
-                <CardMedia
-                    className={classes.cover}
-                    image={image}
-                    title="Live from space album cover"
-                />
-                </Card>
-                <Card className={classes.miniroot} elevation={3}>
-                <div className={classes.details}>
-                    <CardContent className={classes.content} >
-                    <Typography component="h7" variant="h7">
-                        Name Here
-                    </Typography>
-                    <Typography className={classes.jobtitle }  variant="subtitle1" color="textSecondary">
-                        job title
-                    </Typography>
-                    </CardContent>
-                </div>
-                <CardMedia
-                    className={classes.cover}
-                    image={image}
-                    title="Live from space album cover"
-                />
-                </Card>
-                <Card className={classes.miniroot} elevation={3}>
-                <div className={classes.details}>
-                    <CardContent className={classes.content} >
-                    <Typography component="h7" variant="h7">
-                        Name Here
-                    </Typography>
-                    <Typography className={classes.jobtitle } variant="subtitle1" color="textSecondary">
-                        job title
-                    </Typography>
-                    </CardContent>
-                </div>
-                <CardMedia
-                    className={classes.cover}
-                    image={image}
-                    title="Live from space album cover"
-                />
-                </Card>
-                <Card className={classes.miniroot} elevation={3}>
-                <div className={classes.details}>
-                    <CardContent className={classes.content} >
-                    <Typography component="h7" variant="h7">
-                        Name Here
-                    </Typography>
-                    <Typography className={classes.jobtitle } variant="subtitle1" color="textSecondary">
-                        job title
-                    </Typography>
-                    </CardContent>
-                </div>
-                <CardMedia
-                    className={classes.cover}
-                    image={image}
-                    title="Live from space album cover"
-                />
-                </Card>
-                <Card className={classes.miniroot} elevation={3}>
-                <div className={classes.details}>
-                    <CardContent className={classes.content} >
-                    <Typography component="h7" variant="h7">
-                        Name Here
-                    </Typography>
-                    <Typography className={classes.jobtitle }  variant="subtitle1" color="textSecondary">
-                        job title
-                    </Typography>
-                    </CardContent>
-                </div>
-                <CardMedia
-                    className={classes.cover}
-                    image={image}
-                    title="Live from space album cover"
-                />
-                </Card>
-                <Card className={classes.miniroot} elevation={3}>
-                <div className={classes.details}>
-                    <CardContent className={classes.content} >
-                    <Typography component="h7" variant="h7">
-                        Name Here
-                    </Typography>
-                    <Typography className={classes.jobtitle } variant="subtitle1" color="textSecondary">
-                        job title
-                    </Typography>
-                    </CardContent>
-                </div>
-                <CardMedia
-                    className={classes.cover}
-                    image={image}
-                    title="Live from space album cover"
-                />
-                </Card>
-                <Card className={classes.miniroot} elevation={3}>
-                <div className={classes.details}>
-                    <CardContent className={classes.content} >
-                    <Typography component="h7" variant="h7">
-                        Name Here
-                    </Typography>
-                    <Typography className={classes.jobtitle } variant="subtitle1" color="textSecondary">
-                        job title
-                    </Typography>
-                    </CardContent>
-                </div>
-                <CardMedia
-                    className={classes.cover}
-                    image={image}
-                    title="Live from space album cover"
-                />
-                </Card>
-                <Card className={classes.miniroot} elevation={3}>
-                <div className={classes.details}>
-                    <CardContent className={classes.content} >
-                    <Typography component="h7" variant="h7">
-                        Name Here
-                    </Typography>
-                    <Typography className={classes.jobtitle }  variant="subtitle1" color="textSecondary">
-                        job title
-                    </Typography>
-                    </CardContent>
-                </div>
-                <CardMedia
-                    className={classes.cover}
-                    image={image}
-                    title="Live from space album cover"
-                />
-                </Card>
-                <Card className={classes.miniroot} elevation={3}>
-                <div className={classes.details}>
-                    <CardContent className={classes.content} >
-                    <Typography component="h7" variant="h7">
-                        Name Here
-                    </Typography>
-                    <Typography className={classes.jobtitle } variant="subtitle1" color="textSecondary">
-                        job title
-                    </Typography>
-                    </CardContent>
-                </div>
-                <CardMedia
-                    className={classes.cover}
-                    image={image}
-                    title="Live from space album cover"
-                />
-                </Card>
-                <Card className={classes.miniroot} elevation={3}>
-                <div className={classes.details}>
-                    <CardContent className={classes.content} >
-                    <Typography component="h7" variant="h7">
-                        Name Here
-                    </Typography>
-                    <Typography className={classes.jobtitle } variant="subtitle1" color="textSecondary">
-                        job title
-                    </Typography>
-                    </CardContent>
-                </div>
-                <CardMedia
-                    className={classes.cover}
-                    image={image}
-                    title="Live from space album cover"
-                />
-                </Card>
-
-                <Card className={classes.miniroot} elevation={3}>
-                <div className={classes.details}>
-                    <CardContent className={classes.content} >
-                    <Typography component="h7" variant="h7">
-                        Name Here
-                    </Typography>
-                    <Typography className={classes.jobtitle }  variant="subtitle1" color="textSecondary">
-                        job title
-                    </Typography>
-                    </CardContent>
-                </div>
-                <CardMedia
-                    className={classes.cover}
-                    image={image}
-                    title="Live from space album cover"
-                />
-                </Card>
-                <Card className={classes.miniroot} elevation={3}>
-                <div className={classes.details}>
-                    <CardContent className={classes.content} >
-                    <Typography component="h7" variant="h7">
-                        Name Here
-                    </Typography>
-                    <Typography className={classes.jobtitle } variant="subtitle1" color="textSecondary">
-                        job title
-                    </Typography>
-                    </CardContent>
-                </div>
-                <CardMedia
-                    className={classes.cover}
-                    image={image}
-                    title="Live from space album cover"
-                />
-                </Card>
-                <Card className={classes.miniroot} elevation={3}>
-                <div className={classes.details}>
-                    <CardContent className={classes.content} >
-                    <Typography component="h7" variant="h7">
-                        Name Here
-                    </Typography>
-                    <Typography className={classes.jobtitle } variant="subtitle1" color="textSecondary">
-                        job title
-                    </Typography>
-                    </CardContent>
-                </div>
-                <CardMedia
-                    className={classes.cover}
-                    image={image}
-                    title="Live from space album cover"
-                />
-                </Card>
-
-                <Card className={classes.miniroot} elevation={3}>
-                <div className={classes.details}>
-                    <CardContent className={classes.content} >
-                    <Typography component="h7" variant="h7">
-                        Name Here
-                    </Typography>
-                    <Typography className={classes.jobtitle } variant="subtitle1" color="textSecondary">
-                        job title
-                    </Typography>
-                    </CardContent>
-                </div>
-                <CardMedia
-                    className={classes.cover}
-                    image={image}
-                    title="Live from space album cover"
-                />
-                </Card>
-
-                <Card className={classes.miniroot} elevation={3}>
-                <div className={classes.details}>
-                    <CardContent className={classes.content} >
-                    <Typography component="h7" variant="h7">
-                        Name Here
-                    </Typography>
-                    <Typography className={classes.jobtitle } variant="subtitle1" color="textSecondary">
-                        job title
-                    </Typography>
-                    </CardContent>
-                </div>
-                <CardMedia
-                    className={classes.cover}
-                    image={image}
-                    title="Live from space album cover"
-                />
-                </Card>
+                
             </div>
             </div>
             </div>
