@@ -50,7 +50,7 @@ export default  function AddEvents() {
           variant="filled"
         />
         <Button variant="contained" color="primary" className={classes.button}>
-        Submit Application
+        Publish Event
         </Button>
       </div>
     </form>

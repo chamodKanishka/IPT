@@ -66,7 +66,7 @@ export default  function StudentHome() {
 
   return (
       <div>
-            <StudentHomeNav/>
+          <StudentHomeNav/>
             <div className={classes.body}>
                 <h3 className={classes.activity}>Recently Viewed Jobs</h3>
                 <div className={classes.recent}>

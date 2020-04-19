@@ -15,7 +15,8 @@ import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
 import InboxIcon from '@material-ui/icons/MoveToInbox';
 import MailIcon from '@material-ui/icons/Mail';
-
+import { Link } from 'react-router-dom';
+import StudentHome from './studentHome';
 
 
 
@@ -49,7 +50,8 @@ export default  function StudentHomeNav() {
           <List>
             {['Profile','Help & Support'].map((text, index) => (
               <ListItem button key={text}>
-                <ListItemIcon>{index % 2 === 0 ? <InboxIcon /> : <MailIcon />}</ListItemIcon>
+                
+                <ListItemIcon>{index % 2 === 0 ? <Link to="studentProfile"><InboxIcon /></Link> : <MailIcon />}</ListItemIcon>
                 <ListItemText primary={text} />
               </ListItem>
             ))}
@@ -74,12 +76,22 @@ export default  function StudentHomeNav() {
                 ))}
                 </div>
                 <Typography variant="h4" className={classes.title}>
+                <Link to="studentHome" className={classes.link}>
                 IPT
+                </Link>
                 </Typography>
+                <Link to="studentHome" className={classes.link}>
                 <Button color="inherit" className={classes.menu}>Home</Button>
+                </Link>
+                <Link to="studentOpportunities" className={classes.link}>
                 <Button color="inherit" className={classes.menu}>Opportunities</Button>
+                </Link>
+                <Link to="companies" className={classes.link}>
                 <Button color="inherit" className={classes.menu}>Companies</Button>
+                </Link>
+                <Link to="events" className={classes.link}>
                 <Button color="inherit" className={classes.menu}>Events</Button>
+                </Link>
                 <Button color="inherit" className={classes.menu}>Log out</Button>
             </Toolbar>
             </AppBar>
@@ -110,4 +122,8 @@ const useStyles = makeStyles((theme) => ({
     menu: {
         marginLeft: 150,
       },
+      link:{
+        textDecoration:'none',
+        color:'white',
+      }
   }));

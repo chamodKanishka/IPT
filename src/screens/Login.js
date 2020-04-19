@@ -8,24 +8,16 @@ import CardActionArea from '@material-ui/core/CardActionArea';
 import CardContent from '@material-ui/core/CardContent';
 import Button from '@material-ui/core/Button';
 import TextField from '@material-ui/core/TextField';
-import FormControlLabel from '@material-ui/core/FormControlLabel';
-import Checkbox from '@material-ui/core/Checkbox';
 import Box from '@material-ui/core/Box';
 import FormControl from '@material-ui/core/FormControl';
 import Logo from '../images/login.jpg'
+import { Link } from 'react-router-dom';
 
 
 export default  function Login() {
 
     const classes = useStyles();
-
-    const [state, setState] = React.useState({
-        checkedB: false,
-      });
     
-      const handleChange = (event) => {
-        setState({ ...state, [event.target.name]: event.target.checked });
-      };
 
   return (
     <div className={classes.main}>
@@ -49,22 +41,14 @@ export default  function Login() {
             autoComplete="current-password"/>
             <Box className={classes.box} component="span" m={1}>
             <FormControl className={classes.checkbox} component="fieldset">
-            <FormControlLabel
-                control={
-                <Checkbox
-                    checked={state.checkedB}
-                    onChange={handleChange}
-                    name="checkedB"
-                    color="primary"
-                />
-                }
-                labelPlacement="end"
-                label="Remember Me"
-            />
+            <Link to="/register" style={{textDecoration:'none'}} className={classes.link}>If you dont have account, Register</Link>
             </FormControl>
-            <Button className={classes.button} variant="contained" color="primary">
+            
+            <Link to="/studentArea/studentHome" className={classes.link}>
+            <Button className={classes.button}  variant="contained" color="primary">
             Login
             </Button>
+            </Link>
             </Box>
             </Card>
             </div>
@@ -105,5 +89,8 @@ const useStyles = makeStyles({
     },
     button:{
         width:'4cm',
+    },
+    link:{
+      textDecoration:'none'
     }
   });

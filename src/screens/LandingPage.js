@@ -7,7 +7,8 @@ import Button from '@material-ui/core/Button';
 import Grid from '@material-ui/core/Grid';
 import Paper from '@material-ui/core/Paper';
 import Footer from './subComponents/Footer';
-
+import nsbm from '../images/nsbm.jpg';
+import { Link } from 'react-router-dom';
 function LandingPage() {
     const classes = useStyles();
 
@@ -19,8 +20,6 @@ function LandingPage() {
         <Typography variant="h6" className={classes.title}>
           Industiral Preparation Programme
         </Typography>
-        <Button color="inherit">Button1</Button>
-        <Button color="inherit">Button2</Button>
       </Toolbar>
     </AppBar>
     <Paper className={classes.paper} variant="outlined" elevation={5}>
@@ -41,9 +40,11 @@ function LandingPage() {
                 </Typography>
               </Grid>
               <Grid item>
+                <Link style={{textDecoration:'none'}} to="/Login">
               <Button variant="contained" color="primary">
                     Let's Start
                 </Button>
+                </Link>
               </Grid>
             </Grid>
           </Grid>
@@ -59,7 +60,7 @@ export default LandingPage;
 
 const useStyles = makeStyles((theme) => ({
     main:{
-        background: 'url(https://images.pexels.com/photos/378273/pexels-photo-378273.jpeg?w=1260&h=750&auto=compress&cs=tinysrgb) center center no-repeat',
+        background: `url(${nsbm})`,
         backgroundSize: 'cover' ,
         height:'fixed'
     },
