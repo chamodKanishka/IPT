@@ -51,9 +51,11 @@ export default  function Register() {
             <FormControl className={classes.checkbox} component="fieldset">
             <Link to="/login" className={classes.link}>If you have account, Login</Link>
             </FormControl>
+            <Link to="/companyArea/companyHome" className={classes.link}>
             <Button className={classes.button} variant="contained" color="primary">
             Register
             </Button>
+            </Link>
             </Box>
             </Card>
             </div>

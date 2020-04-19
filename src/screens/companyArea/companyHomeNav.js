@@ -15,7 +15,7 @@ import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
 import InboxIcon from '@material-ui/icons/MoveToInbox';
 import AddCircleIcon from '@material-ui/icons/AddCircleOutlined'
-
+import { Link } from 'react-router-dom';
 
 
 
@@ -77,9 +77,15 @@ export default  function CompanyHomeNav() {
                 <Typography variant="h4" className={classes.title}>
                 APT
                 </Typography>
+                <Link to="companyHome" className={classes.link}>
                 <Button color="inherit" className={classes.menu}>Home</Button>
+                </Link>
+                <Link to="studentSection" className={classes.link}>
                 <Button color="inherit" className={classes.menu}>Students</Button>
+                </Link>
+                <Link to="applications" className={classes.link}>
                 <Button color="inherit" className={classes.menu}>Applications</Button>
+                </Link>
                 <Button color="inherit" className={classes.menu}>Log out</Button>
             </Toolbar>
             </AppBar>
@@ -110,4 +116,8 @@ const useStyles = makeStyles((theme) => ({
     menu: {
         marginLeft: 180,
       },
+      link:{
+        textDecoration:'none',
+        color:'white',
+      }
   }));

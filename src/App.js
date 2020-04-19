@@ -8,6 +8,12 @@ import studentOpportunities from './screens/studentArea/studentOpportunities';
 import companies from './screens/studentArea/companies';
 import events from './screens/studentArea/events';
 import studentProfile from './screens/studentArea/studentProfile';
+import CompanyHomeNav from './screens/companyArea/companyHomeNav';
+import CompanyHome from './screens/companyArea/companyHome';
+import AddEvent from './screens/companyArea/addEvents';
+import AddOpportunities from './screens/companyArea/addOpportunities';
+import applications from './screens/companyArea/applications';
+import StudentSection from './screens/companyArea/studentsSection';
 import './App.css';
 import { BrowserRouter as Router, Route, Switch} from 'react-router-dom'; 
 
@@ -24,6 +30,13 @@ function App() {
         <Route path="/studentArea/companies" exact component={companies} />
         <Route path="/studentArea/events" exact component={events} />
         <Route path="/studentArea/studentProfile" exact component={studentProfile} />
+        <Route path="/companyArea/companyHomeNav" exact component={CompanyHomeNav} />
+        <Route path="/companyArea/companyHome" exact component={CompanyHome} />
+        <Route path="/companyArea/addEvent" exact component={AddEvent} />
+        <Route path="/companyArea/addOpportunities" exact component={AddOpportunities} />
+        <Route path="/companyArea/applications" exact component={applications} />
+        <Route path="/companyArea/studentSection" exact component={StudentSection} />
+
       </Switch>
     </Router>
   );
