@@ -16,7 +16,7 @@ import DialogActions from '@material-ui/core/DialogActions';
 import DialogContent from '@material-ui/core/DialogContent';
 import DialogContentText from '@material-ui/core/DialogContentText';
 import DialogTitle from '@material-ui/core/DialogTitle';
-import Pdf from "react-to-pdf";
+import ReactToPdf from "react-to-pdf";
 
 const ref = React.createRef();
 
@@ -75,10 +75,11 @@ export default  function Applications() {
                         <div ref={ref} >
                         <DialogContentText
                             id="scroll-dialog-description"
+                            className={classes.cv}
                             ref={descriptionElementRef}
                             tabIndex={-1}
                         >
-                            {[...new Array(50)]
+                            {[...new Array(1)]
                             .map(
                                 () => `Cras mattis consectetur purus sit amet fermentum.
                 Cras justo odio, dapibus ac facilisis in, egestas eget quam.
@@ -93,11 +94,11 @@ export default  function Applications() {
                         <Button onClick={handleClose} color="primary">
                             Close
                         </Button>
-                        <Pdf targetRef={ref} filename="CV.pdf">
+                        <ReactToPdf targetRef={ref} filename="CV.pdf" x={20.0} y={15.0} scale={1.125}>
                         {({ toPdf }) => <Button onClick={toPdf} color="primary">
                             Download CV
                         </Button>}
-                        </Pdf>
+                        </ReactToPdf>
                         </DialogActions>
                     </Dialog>
                 <CardMedia
@@ -185,5 +186,9 @@ const useStyles = makeStyles((theme) => ({
   },
   jobtitle:{
     fontSize:'13px',
+  },
+  cv:{
+    color:'black',
   }
+  
   }));
