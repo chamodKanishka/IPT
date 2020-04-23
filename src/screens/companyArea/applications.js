@@ -16,6 +16,9 @@ import DialogActions from '@material-ui/core/DialogActions';
 import DialogContent from '@material-ui/core/DialogContent';
 import DialogContentText from '@material-ui/core/DialogContentText';
 import DialogTitle from '@material-ui/core/DialogTitle';
+import Pdf from "react-to-pdf";
+
+const ref = React.createRef();
 
 export default  function Applications() {
     const classes = useStyles();
@@ -67,7 +70,9 @@ export default  function Applications() {
                         aria-describedby="scroll-dialog-description"
                     >
                         <DialogTitle id="scroll-dialog-title">Qualifications</DialogTitle>
+                        
                         <DialogContent dividers={scroll === 'paper'}>
+                        <div ref={ref} >
                         <DialogContentText
                             id="scroll-dialog-description"
                             ref={descriptionElementRef}
@@ -82,14 +87,17 @@ export default  function Applications() {
                             )
                             .join('\n')}
                         </DialogContentText>
+                        </div>
                         </DialogContent>
                         <DialogActions>
                         <Button onClick={handleClose} color="primary">
                             Close
                         </Button>
-                        <Button onClick={handleClose} color="primary">
+                        <Pdf targetRef={ref} filename="CV.pdf">
+                        {({ toPdf }) => <Button onClick={toPdf} color="primary">
                             Download CV
-                        </Button>
+                        </Button>}
+                        </Pdf>
                         </DialogActions>
                     </Dialog>
                 <CardMedia
